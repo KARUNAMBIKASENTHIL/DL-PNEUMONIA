@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="icon">🫁</span> Pneumonia Detection AI</h1>
+            <p>Upload a Chest X-Ray to check for Pneumonia</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <input type="file" id="imageInput" accept=".jpg, .jpeg, .png" hidden>
+                <label for="imageInput" class="upload-box" id="uploadBox">
+                    <div class="upload-content">
+                        <span class="upload-icon">📤</span>
+                        <p>Click or Drag X-Ray Image Here</p>
+                        <small>Supports JPG, PNG</small>
+                    </div>
+                    <img id="imagePreview" class="hidden" alt="Preview">
+                </label>
+            </div>
+
+            <div class="action-section">
+                <button id="predictBtn" disabled>Run Analysis</button>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <span>Analyzing Image...</span>
+                </div>
+            </div>
+
+            <div id="resultBox" class="result-box hidden">
+                <h2 id="predictionResult"></h2>
+                <p id="confidenceScore"></p>
+                <p id="recommendation"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

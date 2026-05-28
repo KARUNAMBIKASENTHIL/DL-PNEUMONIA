@@ -1,0 +1,11 @@
+# Exclude Dataset Folder
+Radiography/
+
+# Exclude large trained models
+*.pth
+
+# Exclude virtual environments
+dl_env/
+backups/
+.ipynb_checkpoints/
+~$DLREPO.pptx
