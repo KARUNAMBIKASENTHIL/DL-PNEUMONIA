@@ -54,7 +54,7 @@ predictBtn.addEventListener('click', async function() {
     formData.append('image', selectedFile);
 
     try {
-        const response = await fetch('/predict', {
+        const response = await fetch('https://pneumonia-prediction-chest-xray.onrender.com/predict', {
             method: 'POST',
             body: formData
         });
