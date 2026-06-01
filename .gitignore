@@ -5,6 +5,7 @@ Radiography/
 *.pth
 !pneumonia_model.pth
 !Deployment/model/pneumonia_model.pth
+!DL-PNEUMONIa/pneumonia_model.pth
 
 # Exclude virtual environments
 dl_env/
