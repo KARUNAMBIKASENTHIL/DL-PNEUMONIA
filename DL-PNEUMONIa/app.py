@@ -172,7 +172,7 @@ else:
             
             # Generate Grad-CAM Heatmap
             try:
-                cam_generator = GradCAM(model, model.conv3)
+                cam_generator = GradCAM(model, model.sa)
                 heatmap = cam_generator.generate(input_tensor)
                 
                 # Superimpose heatmap
