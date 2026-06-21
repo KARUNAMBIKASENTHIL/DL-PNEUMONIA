@@ -110,7 +110,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 @st.cache_resource
 def load_model():
     model = AttentionCNN()
-    model_path = 'pneumonia_model.pth'
+    # Resolve the path relative to this script's directory
+    model_path = os.path.join(os.path.dirname(__file__), 'pneumonia_model.pth')
     
     if os.path.exists(model_path):
         model.load_state_dict(torch.load(model_path, map_location=device))
@@ -118,6 +119,13 @@ def load_model():
         model.eval()
         return model
     else:
+        # Fallback to root directory check if not found in the script folder
+        fallback_path = 'pneumonia_model.pth'
+        if os.path.exists(fallback_path):
+            model.load_state_dict(torch.load(fallback_path, map_location=device))
+            model.to(device)
+            model.eval()
+            return model
         return None
 
 # --- Web App UI ---
